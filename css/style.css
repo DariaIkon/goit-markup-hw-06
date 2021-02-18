@@ -245,17 +245,16 @@ a.webstudio-logo-header {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
 }
 .modal h3 {
   font-family: Roboto;
   font-weight: bold;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.15px;
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
-  margin-top: 40px;
-  margin-bottom: 12px;
 }
 .modal-close-btn {
   position: absolute;
@@ -274,10 +273,10 @@ a.webstudio-logo-header {
   margin-top: 8px;
   margin-right: 8px;
   cursor: pointer;
-
-  background-image: url(../images/button.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+}
+.modal-close-btn svg {
+  width: 11px;
+  height: 11px;
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus,
@@ -286,55 +285,34 @@ a.webstudio-logo-header {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form {
+  display: flex;
+  flex-direction: column;
   width: 448px;
   margin: 0 auto;
 }
-.form-field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  position: relative;
-}
-.form-field input {
+.form input:not([type="checkbox"]),
+.form textarea {
+  display: block;
   margin: 0;
   padding: 0;
+  margin-top: 4px;
   height: 40px;
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
+  padding-left: 42px;
 }
-.form-field label {
-  margin-bottom: 4px;
+.form label {
+  margin-bottom: 10px;
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
   color: #757575;
 }
-.form-field textarea {
-  height: 120px;
-  margin-bottom: 25px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  resize: none;
-  padding: 12px 16px;
-}
-.form-field textarea::placeholder {
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-.modal-btn {
-  display: flex;
-  margin: 0 auto;
-}
-.modal-send-button {
-  align-items: center;
+.form .modal-submit-btn {
   align-self: center;
-  text-align: center;
   width: 200px;
   height: 50px;
   background: var(--blue-color);
@@ -350,56 +328,80 @@ a.webstudio-logo-header {
 
   border: none;
   outline: none;
-  /* margin-top: 30px;
-  margin-right: 164px;
-  margin-bottom: 40px;
-  margin-left: 164px;*/
+
+  margin-top: 30px;
 }
-.modal-icon {
-  position: absolute;
-  display: inline-block;
-  transform: translateY(-75%);
-  width: 18px;
-  height: 18px;
-  top: 75%;
-  left: 12px;
+.form textarea {
+  height: 120px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  padding: 12px 16px;
 }
-.modal-icon-person {
-  width: 12px;
-  height: 12px;
-}
-.modal-icon-phone {
-  width: 13px;
-  height: 13px;
-}
-.modal-icon-mail {
-  width: 16px;
-  height: 12px;
-}
-.form-input:hover,
-.form-input:focus {
-  border: 1px solid var(--blue-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form-input:hover ~ .modal-icon,
-.form-input:focus ~ .modal-icon {
-  fill: var(--blue-color);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.modal-checkbox {
+.label-checkbox {
   display: flex;
   align-items: center;
-}
-.modal-checkbox span {
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
   color: #757575;
+  margin-top: 9px;
 }
-.modal-checkbox a {
+.label-checkbox a {
   color: var(--blue-color);
   text-decoration: underline;
+}
+.input-wrapper {
+  display: block;
+  position: relative;
+}
+.form-label svg {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+}
+.form-label:hover svg,
+.form-label:focus-within svg path {
+  fill: var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-label:hover input,
+.form-label:focus-within input {
+  border: 1px solid var(--blue-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.label-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.modal-checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-image: url(../images/modal-form-checkbox.svg);
+  margin-right: 9px;
+}
+.input-checkbox:checked + .modal-checkbox-icon {
+  background-color: var(--blue-color);
+  background-image: url(../images/modal-form-icon-check.svg);
+  background-origin: border-box;
 }
 /* /top */
 
@@ -695,7 +697,7 @@ ul.team-list p {
 .webstudio-white {
   color: var(--main-light-color);
 }
-.footer-connect h3 {
+.footer h3 {
   font-family: Roboto;
   font-weight: bold;
   font-size: 14px;
@@ -703,6 +705,7 @@ ul.team-list p {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
+  margin: 0;
 }
 .footer-item-icon {
   display: flex;
@@ -712,7 +715,7 @@ ul.team-list p {
   background-color: rgba(255, 255, 255, 0.1);
   width: 44px;
   height: 44px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 .footer-icon {
   fill: var(--main-light-color);
@@ -724,11 +727,64 @@ ul.team-list p {
   justify-content: space-between;
   width: 206px;
   margin: 0;
+  margin-right: 93px;
 }
 .footer-item-icon:hover,
 .footer-item-icon:focus {
   background-color: var(--blue-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.follow-form {
+  margin-top: 20px;
+}
+.follow-form input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: inherit;
+  padding-left: 16px;
+  margin-right: 12px;
+}
+.follow-form input::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.follow-form button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 28px;
+
+  width: 200px;
+  height: 50px;
+  background: var(--blue-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  color: var(--main-light-color);
+
+  border: none;
+  outline: none;
+}
+.button-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  background-image: url(../images/footer-button-send.svg);
 }
 
 /* / footer */
