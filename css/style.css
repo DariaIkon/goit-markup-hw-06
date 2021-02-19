@@ -371,13 +371,13 @@ a.webstudio-logo-header {
   width: 18px;
   height: 18px;
 }
-.form-label:hover svg,
-.form-label:focus svg path {
+.form-label:hover svg path,
+.form-label:focus-within svg path {
   fill: var(--blue-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-label:hover input,
-.form-label:focus input {
+.form-label:focus-within input {
   border: 1px solid var(--blue-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -740,6 +740,7 @@ ul.team-list p {
 }
 .footer-follow {
   margin-left: 93px;
+  justify-content: flex-end;
 }
 .follow-form {
   margin-top: 20px;
@@ -752,6 +753,7 @@ ul.team-list p {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: inherit;
+  color: rgba(255, 255, 255, 0.6);
   padding-left: 16px;
   margin-right: 12px;
 }
