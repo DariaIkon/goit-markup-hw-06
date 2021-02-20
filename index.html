@@ -103,40 +103,50 @@
                             <form class="form">
                                     <label class="form-label form-label-name">Имя
                                         <span class="input-wrapper">
-                                            <svg>
-                                                <use href="./images/sprite-modal.svg#modal-form-person">
-                                                </use>
-                                            </svg>
+                                            <span class="form-icon">
+                                                <svg>
+                                                    <use href="./images/sprite-modal.svg#modal-form-person">
+                                                    </use>
+                                                </svg>
+                                            </span>
                                             <input class="form-input" type="text" name="name" pattern="[А-Я а-я]{2,}"/>
                                         </span>
                                     </label>
                                     <label class="form-label form-label-phone">Телефон
                                         <span class="input-wrapper">
-                                            <svg>
-                                                <use href="./images/sprite-modal.svg#modal-form-phone">
-                                                </use>
-                                            </svg>
+                                            <span class="form-icon">
+                                                <svg>
+                                                    <use href="./images/sprite-modal.svg#modal-form-phone">
+                                                    </use>
+                                                </svg>
+                                            </span>
                                             <input class="form-input" type="tel" name="phone"/>
                                         </span>
                                     </label>
                                     <label class="form-label form-label-mail">Почта
                                         <span class="input-wrapper">
-                                            <svg>
-                                                <use href="./images/sprite-modal.svg#modal-form-mail">
-                                                </use>
-                                            </svg>
+                                            <span class="form-icon">
+                                                <svg>
+                                                    <use href="./images/sprite-modal.svg#modal-form-mail">
+                                                    </use>
+                                                </svg>
+                                            </span>
                                             <input class="form-input" type="email" name="mail"/>
                                         </span>
                                     </label>
-                                    <label>Комментарий
+                                    <label class="form-textarea">Комментарий
                                         <textarea name="textarea" cols="30" rows="10" placeholder="Введите текст"></textarea>
                                     </label> 
                                     <label class="label-checkbox">
                                         <input class="input-checkbox" type="checkbox" name="contract" value="accept" required/>
-                                            <span class="modal-checkbox-icon"></span>
-                                            Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a>
+                                        <span class="modal-checkbox-icon"></span>
+                                        <p class="modal-checkbox-text">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></p>
                                     </label>
-                                    <button class="modal-submit-btn" type="submit" data-modal-close>
+                                    <button 
+                                        class="modal-submit-btn" 
+                                        type="submit" 
+                                        data-modal-close
+                                    >
                                         Отправить
                                     </button>
                             </form>        

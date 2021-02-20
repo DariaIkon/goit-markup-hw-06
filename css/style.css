@@ -293,8 +293,7 @@ a.webstudio-logo-header {
   width: 448px;
   margin: 0 auto;
 }
-.form input:not([type="checkbox"]),
-.form textarea {
+.form input:not([type="checkbox"]) {
   display: block;
   margin: 0;
   padding: 0;
@@ -306,8 +305,13 @@ a.webstudio-logo-header {
   cursor: pointer;
   padding-left: 42px;
 }
-.form label {
+.form-label {
   margin-bottom: 10px;
+}
+.form-textarea {
+  margin-bottom: 20px;
+}
+.form label {
   font-weight: normal;
   font-size: 12px;
   line-height: 1.167;
@@ -331,12 +335,14 @@ a.webstudio-logo-header {
 
   border: none;
   outline: none;
-
-  margin-top: 30px;
 }
-.form textarea {
+.form-textarea textarea {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-top: 4px;
   height: 120px;
-  margin-bottom: 25px;
+  width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
@@ -345,13 +351,17 @@ a.webstudio-logo-header {
 .label-checkbox {
   display: flex;
   align-items: center;
+  align-self: center;
+  margin-bottom: 30px;
+}
+.label-checkbox p {
+  display: flex;
   font-weight: normal;
   font-size: 14px;
-  line-height: 1.71;
+  line-height: 1.714;
   letter-spacing: 0.03em;
   color: var(--gray-color);
-  margin-left: 9px;
-  align-self: center;
+  margin: 0;
 }
 .label-checkbox a {
   color: var(--blue-color);
@@ -371,14 +381,14 @@ a.webstudio-logo-header {
   width: 18px;
   height: 18px;
 }
-.form-label:hover svg path,
-.form-label:focus-within svg path {
+
+.input-wrapper:focus-within > .form-icon {
   fill: var(--blue-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-label:hover input,
-.form-label:focus-within input {
+.input-wrapper:focus-within > .form-input {
   border: 1px solid var(--blue-color);
+  outline: none;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-checkbox {
@@ -398,6 +408,7 @@ a.webstudio-logo-header {
 
 .modal-checkbox-icon {
   display: inline-block;
+  justify-content: center;
   width: 16px;
   height: 15px;
   background-image: url(../images/modal-form-checkbox.svg);
@@ -653,10 +664,10 @@ ul.team-list p {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-
 .footer .container {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 .logo {
   margin-bottom: 20px;
@@ -667,14 +678,12 @@ ul.team-list p {
 .footer-list-contacts li:not(:last-child) {
   margin-bottom: 9px;
 }
-
 .footer a:hover,
 .footer a:active,
 .footer a:focus {
   color: var(--blue-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .footer a.webstudio-logo-footer {
   font-family: Raleway;
   font-weight: bold;
